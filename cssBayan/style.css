@@ -5,6 +5,7 @@ main {
     border-radius: 2%;
     padding: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
 }
 
 /*mem*/
@@ -13,36 +14,19 @@ main {
 }
 
 .mem-title {
-    position: relative;
     display: block;
     color: black;
     font-weight: bold;
     cursor: pointer;
     padding: 10px 0px;
 
-    transition: color .2s ease-out;
+    transition: color 0.2s ease-out;
+    position: relative;
+    border-top: 1.5px solid #bec3c6;
 }
 
 .mem-title:hover {
     color: rgb(41, 41, 176);
-}
-
-.mem-input {
-    width: 0;
-    height: 0;
-
-    -webkit-appearance: none;
-    appearance: none;
-
-    position: absolute;
-}
-
-.mem-input:checked+.mem-img {
-    display: block;
-}
-
-.mem-img {
-    display: none;
 }
 
 img {
@@ -51,18 +35,53 @@ img {
     margin: 10px 0px;
 }
 
-.plus {
-    width: 40px;
-    height: auto;
+.mem-title::after {
+    display: block;
+    content: "+";
+    font-size: 12px;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.3s all;
 }
 
-.mem-plus {
+.mem-item[open] .mem-title::after {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+
+summary::-webkit-details-marker {
     display: none;
 }
 
-.mem-input:hover+.mem-plus {
-    display: block;
-    position: absolute;
-    right: 12px;
-    /* transform: rotate(45deg); */
+@media (max-width: 820px) {
+    main {
+        max-width: 300px;
+        font-size: 12px;
+    }
+
+    img {
+        width: 300px;
+        height: auto;
+        margin: 10px 0px;
+    }
+}
+
+@media (max-width: 320px) {
+    main {
+        max-width: 200px;
+        font-size: 9px;
+        margin: 10px auto;
+    }
+
+    img {
+        width: 150px;
+        height: auto;
+        margin: 10px 0px;
+    }
+
+    .mem-title::after {
+        display: none;
+    }
 }
