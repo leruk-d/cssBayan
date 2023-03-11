@@ -1,0 +1,68 @@
+main {
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: rgb(227, 231, 220);
+    border-radius: 2%;
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*mem*/
+.mem-container {
+    border-top: 1.5px solid #bec3c6;
+}
+
+.mem-title {
+    position: relative;
+    display: block;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 0px;
+
+    transition: color .2s ease-out;
+}
+
+.mem-title:hover {
+    color: rgb(41, 41, 176);
+}
+
+.mem-input {
+    width: 0;
+    height: 0;
+
+    -webkit-appearance: none;
+    appearance: none;
+
+    position: absolute;
+}
+
+.mem-input:checked+.mem-img {
+    display: block;
+}
+
+.mem-img {
+    display: none;
+}
+
+img {
+    width: 400px;
+    height: auto;
+    margin: 10px 0px;
+}
+
+.plus {
+    width: 40px;
+    height: auto;
+}
+
+.mem-plus {
+    display: none;
+}
+
+.mem-input:hover+.mem-plus {
+    display: block;
+    position: absolute;
+    right: 12px;
+    /* transform: rotate(45deg); */
+}
